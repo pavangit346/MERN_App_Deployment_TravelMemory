@@ -133,8 +133,9 @@ create .env file to work with the backend and copy the end point of db and also 
 vim .env
 enter:
 
-MONGO_URI='mongodb+srv://admin:adminadmin1234@cluster0.0b4vnjq.mongodb.net/mern_app'
+MONGO_URI='mongodb+srv://pavannaga:tmdbpwd@cluster0.gnvcdk7.mongodb.net/tm-db-pavan'
 PORT=3000
+
 initialize npm, install to get dependencies and then start the server
 
 npm init -y
