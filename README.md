@@ -246,3 +246,20 @@ PublicIPs: 35.170.56.66    PrivateIPs: 10.2.4.40
 BE - #2
 PublicIPs: 3.235.230.5    PrivateIPs: 10.2.13.73
 Tested and verified that the instances
+
+# Load Balancing - 
+
+Below target groups attach to security groups which has open to 80/443/22/8080/3000
+FETG-TMFELB-Pavan
+BETG-TMBELB-Pavan
+
+load balacer Front End( register - TG : FETG-TMFELB-Pavan) 
+FELB-TM-Pavan
+DNS : FELB-TM-Pavan-70310177.us-east-1.elb.amazonaws.com
+
+Load balancer Back End ( register - TG : BETG-TMBELB-Pavan) 
+BELB-TM-Pavan
+DNS : BELB-TM-Pavan-1192894435.us-east-1.elb.amazonaws.com
+
+Both backend and frontend are deployed , tested and working on the Loadbalacners.
+
