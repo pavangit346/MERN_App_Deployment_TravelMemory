@@ -263,3 +263,8 @@ DNS : BELB-TM-Pavan-1192894435.us-east-1.elb.amazonaws.com
 
 Both backend and frontend are deployed , tested and working on the Loadbalacners.
 
+# Renamed the Frontend App at Instance #1 as React App - 1 and renamed the App as React App - 2 from Instance #2
+started NPM.
+Tested the the Frontend loadbalancer, for Load balance between React App - 1 and React App- 2
+tested and verified that working fine.
+
