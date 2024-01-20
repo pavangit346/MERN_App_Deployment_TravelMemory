@@ -104,7 +104,15 @@ Netwrok Access was added as 0.0.0.0/0, so that it an be access from anywhere
 
 Use MongoDBCompass to test the login URL
 
-Create two Ec2 instance - preferred Ubuntu - named - Satya_TM_FE, and Satya_TM_BE
+# Created Multiple VMs for Frontend and Backend.
+#1 Set VM's
+(i-007430b282ebbf64c ) -- > pavan-tm-be-jan24  ( backend ) #1 
+( i-0db432ff5984b6ff6 ) --> pavan-tm-fe-jan24  ( frontend ) #1 
+
+#2 Set VM's 
+
+( i-01b5ed4aee483f068 ) --> pavan-tm-be2-jan24 (backend ) #2
+( i-060cb8d47dbf0c8f3 ) --> pavan-tm-fe2-jan24 ( frontend ) #2
 
 Update and Upgrade OS
 
@@ -114,7 +122,7 @@ install git on both the instances
 sudo apt-get install git -y
 clone the git repo
 
-git clone https://github.com/CharismaticOwl/TravelMemory.git
+git clone https://github.com/UnpredictablePrashant/TravelMemory
 Install nodejs and npm on both the instances
 
 sudo apt-get update
@@ -155,7 +163,7 @@ output should be - Cannot GET /
 
 Which verifies that connection to DB is good to go
 
-Installing Nginx and doing reverse proxy to http://localhost:3000
+# Installing Nginx and doing reverse proxy to http://localhost:3000
 
 sudo apt install nginx -y
 
@@ -268,3 +276,19 @@ started NPM.
 Tested the the Frontend loadbalancer, for Load balance between React App - 1 and React App- 2
 tested and verified that working fine.
 
+# Route 53 Configuration
+
+added breezypavan.com to the hosted zone of AWS route 53.
+Added A record for loadbalancer address
+added CNAME record for another alias of hosted zone domain as tm.breezypavan.com
+
+now TM App is working on http://breezypavancom
+also on http://tm.breezypavan.com
+
+# AWS Certificate for Securing the connection ; SSH -  https 
+Created New certificate for breezypavan.com hosted zone.
+Verified this certificate record to route53 DNS end.
+Certified verified.
+Added Listner group of HTTPS 443 at loadbalancer.
+
+Now Travel Memory is working as https://breezypavan.com
